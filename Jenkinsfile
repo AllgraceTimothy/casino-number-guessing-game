@@ -1,9 +1,8 @@
 pipeline {
     agent {
-        docker {
-            file 'Dockerfile.build'
-            // Retain workspace files between steps
-            reuseNode true 
+        dockerfile {
+            filename 'Dockerfile.build'
+            reuseNode true
         }
     }
     stages {
@@ -16,7 +15,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh './build/casino_game'
+                sh './build/casinxo_game'
                 sh './build/test_game'
             }
         }

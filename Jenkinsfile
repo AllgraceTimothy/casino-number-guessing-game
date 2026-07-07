@@ -1,7 +1,9 @@
 pipeline {
     agent {
         docker {
-            image 'gcc:14'
+            file 'Dockerfile.build'
+            // Retain workspace files between steps
+            reuseNode true 
         }
     }
     stages {
